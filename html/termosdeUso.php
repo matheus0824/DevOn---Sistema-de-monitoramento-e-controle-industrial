@@ -1,5 +1,15 @@
-<section>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Termos de Uso - DevOn</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="../css/termosdeUso.css">
+    <link rel="stylesheet" href="../css/footer.css">
+</head>
+<body>
+<section>
 
     <div class="container"> 
         <h1>Termos e Condições de Uso – DevOn</h1>
@@ -84,6 +94,6 @@ O uso contínuo após a alteração implica aceitação dos novos termos.
 
 </section>
 
-<?php
-include 'footer.php';
-?>
+<?php include 'footer.php'; ?>
+</body>
+</html>
