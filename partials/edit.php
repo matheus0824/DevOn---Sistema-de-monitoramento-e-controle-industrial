@@ -1,90 +1,59 @@
 <?php
-require_once 'crud.php';
-
-if (!isset($_GET['id'])) {
-    die("ID não informado.");
+session_start();
+if (!isset($_SESSION['usurio_id']) || $_SESSION['usuario_perfil'] !== 'admin') {
+    header("location: ../index.php");
+    exit;
 }
 
-$id = $_GET['id'];
+require_once '../partials/crud.php';
 
-$figurinha = read($pdo, 'figurinhas', "id = $id");
+if (isset($_GET['id'])) {
+    $id = (int)$_GET['id'];
+    $equipamento = read($pdo, 'equipamentos', "id = $id");
+    if (!$equipamento) {
+        die("Equipamento não encontrado.");
+    }
+} else {
+    die("Location: ../html/equipaments.");
+    exit;
+}
 
-if (!$figurinha) {
-    die("Figurinha não encontrada.");
+$clientes = readAll($pdo, 'clientes');
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $nome_maquina = trim($_POST['nome_maquina']);
+    $tipo_variavel = ($_POST['tipo_variavel']);
+    $status_funcionamento = ($_POST['status_funcionamento']);
+    $id_cliente = (int)$_POST['id_cliente'];
+    $nome_foto_banco = $equipamento['imagem'];
+
+    if (isset($_FILES['foto_equipamento']) && $_FILES['foto_equipamento']['error'] == 0 ) {
+        $arquivo = $_FILES['foto_equipamento'];
+        $extensao = strtolower(pathinfo($arquivo['name'], PATHINFO_EXTENSION));
+        
+        if (in_array($extensao, ['jpg', 'jpeg', 'png', 'gif'])) {
+            if (!is_dir("uploads")) {
+                mkdir("uploads", 0755, true);
+            }
+            $nome_final_foto = "../uploads/" . $id_maquina . ".jpg";
+
+            move_uploaded_file($arquivo['tmp_name'], $nome_final_foto);
+
+    }
+}
+
+    if (!empty($nome_maquina) && !empty($id_cliente)) {
+        $dados = [
+            'nome_maquina' => $nome_maquina,
+            'tipo_variavel' => $tipo_variavel,
+            'status_funcionamento' => $status_funcionamento,
+            'id_cliente' => $id_cliente,
+            'imagem' => $nome_foto_banco
+        ];
+
+    update($pdo, 'equipamentos', $dados, "id = $id_maquina");
+    header("Location: ../html/equipaments.php");
+    exit;
+}
 }
 ?>
-
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <title>Editar Figurinha</title>
-    <link rel="stylesheet" href="./style.css">
-</head>
-<body>
-
-<form action="update.php" method="post" enctype="multipart/form-data">
-
-    <h2 style="text-align:center; color: white;">
-        Editar Figurinha
-    </h2>
-
-    <input type="hidden" name="id" value="<?= $figurinha['id'] ?>">
-
-    <label>Nome:</label>
-    <input type="text" name="nome" 
-           value="<?= $figurinha['nome'] ?>" required><br><br>
-
-    <label>Seleção:</label>
-    <input type="text" name="selecao" 
-           value="<?= $figurinha['selecao'] ?>"><br><br>
-
-    <label>Time:</label>
-    <input type="text" name="time" 
-           value="<?= $figurinha['time'] ?>"><br><br>
-
-    <label>Idade:</label>
-    <input type="number" name="idade" 
-           value="<?= $figurinha['idade'] ?>"><br><br>
-
-    <label>Posição:</label>
-
-    <select name="posicao">
-
-        <option <?= $figurinha['posicao'] == 'Atacante' ? 'selected' : '' ?>>
-            Atacante
-        </option>
-
-        <option <?= $figurinha['posicao'] == 'Meio-campo' ? 'selected' : '' ?>>
-            Meio-campo
-        </option>
-
-        <option <?= $figurinha['posicao'] == 'Zagueiro' ? 'selected' : '' ?>>
-            Zagueiro
-        </option>
-
-        <option <?= $figurinha['posicao'] == 'Goleiro' ? 'selected' : '' ?>>
-            Goleiro
-        </option>
-
-    </select><br><br>
-
-    <label>Foto atual:</label>
-
-<?php if (!empty($figurinha['foto'])): ?>
-    <img src="<?= $figurinha['foto'] ?>" class="foto-preview-editar">
-<?php else: ?>
-    <p style="color:white;">Essa figurinha ainda não tem foto.</p>
-<?php endif; ?>
-
-<label>Alterar/Adicionar foto:</label>
-<input type="file" name="arquivo"><br><br>
-
-    <button type="submit">
-        Salvar Alterações
-    </button>
-
-</form>
-
-</body>
-</html>

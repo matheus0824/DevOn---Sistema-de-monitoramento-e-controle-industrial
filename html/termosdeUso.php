@@ -1,8 +1,10 @@
 <section>
     <link rel="stylesheet" href="../css/termosdeUso.css">
 
-    <h1>Termos e Condições de Uso – DevOn</h1>
-
+    <div class="container"> 
+        <h1>Termos e Condições de Uso – DevOn</h1>
+    </div>
+   
 <p>Bem-vindo ao site da DevOn. Ao acessar ou utilizar nossa plataforma e 
 serviços de supervisão industrial e monitoramento, você concorda em cumprir e estar 
 vinculado aos seguintes Termos de Uso. Leia-os atentamente.
