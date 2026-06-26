@@ -49,5 +49,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-location: ../html/formCadstro.php
 ?>

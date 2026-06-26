@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
+    scrollbar-width: none;
 }
 
 body {
@@ -87,6 +88,7 @@ header nav a:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-bottom: 130px;
 }
 
 h1 {
@@ -153,3 +155,116 @@ button:hover {
     background-color: #3f5f3d;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        @import url('https://fonts.cdnfonts.com/css/gilroy-bold');
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Gilroy-Regular', sans-serif;
+        }
+
+        main {
+            background-color: #9c7802;
+        }
+
+        footer {
+            background-color: #ffffff;
+            min-height: 250px;
+            height: 100%;
+            width: 100%;
+            display: flex;
+        }
+
+        .footer-esquerda{
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: left;
+            gap: 12px;
+            padding-left: 15%;
+        }
+
+        .footer-esquerda h1{
+            font-family: 'Gilroy-Bold', sans-serif;
+            color: #3a5a40;
+            font-size: 2rem;
+        }
+
+        .footer-esquerda h2{
+            color: #3a5a40;
+            font-size: 1rem;
+        }
+
+        .footer-esquerda ul {
+            display: flex;
+            margin-top: 5%;
+        }
+
+        .footer-esquerda ul{
+            list-style: none;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .footer-esquerda li a{
+            color: black;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+
+        .footer-direita{
+            padding-right: 15%;
+            gap: 5rem;
+            width: 50%;
+            display: flex;
+            justify-content: right;
+            align-items: center;
+        }
+
+        .footer-direita h1{
+            font-family: 'Gilroy-Bold', sans-serif;
+            font-size: 1.5rem;
+            color: #3a5a40;
+        }
+
+        .footer-direita ul{
+            margin-top: 0.8rem;
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+            font-size: 1rem;
+            
+        }
+
+        .footer-direita li{
+            font-weight: 600;
+            cursor: pointer;
+            transition: ease 0.3s;
+        }
+
+        .footer-direita li:hover{
+            color: #3a5a40;
+            text-shadow: 0 0 10px rgba(58, 90, 64, 0.1);
+        }
