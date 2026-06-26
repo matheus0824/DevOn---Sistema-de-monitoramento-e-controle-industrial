@@ -1,23 +1,23 @@
 <?php
-include '../partials/crud.php';
-//include '../partials/signup.php';
+require_once '../partials/equipamentos_insert.php';
 ?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <title>DevOn - Cadastrar</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/cadastroProdutos.css" rel="stylesheet">
 </head>
+
 <body class="pagina-cadastro">
+
 <div class="caixa-cadastro">
 
     <h3 class="titulo-cadastro">Novo Equipamento</h3>
     
-    <?php if($mensagem): ?> 
-        <div class="alerta-erro"><?= $mensagem; ?></div> 
+    <?php if (!empty($mensagem)): ?> 
+        <div class="alerta-erro"><?= htmlspecialchars($mensagem); ?></div> 
     <?php endif; ?>
     
     <form action="cadastro.php" method="POST" enctype="multipart/form-data">
@@ -61,7 +61,7 @@ include '../partials/crud.php';
         </div>
         
         <div class="acoes-formulario">
-            <a href="equipamentos.php" class="btn-voltar">Voltar</a>
+            <a href="equipaments.php" class="btn-voltar">Voltar</a>
             <button type="submit" class="btn-salvar">Salvar</button>
         </div>
 
