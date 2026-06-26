@@ -1,6 +1,29 @@
 <?php
+require_once '../partials/auth.php';
 require_once '../partials/crud.php';
-$equipamentos =  readAll($pdo, 'equipamentos');
+
+exigirAdmin();
+$equipamentos = readAll($pdo, 'equipamentos');
+
+$idFiltro = 0;
+if (isset($_GET['cliente']) && (int) $_GET['cliente'] > 0) {
+    $idFiltro = (int) $_GET['cliente'];
+} elseif (!empty($_GET['empresa'])) {
+    $empresaFiltro = trim((string) $_GET['empresa']);
+    $clientesLista = readAll($pdo, 'clientes');
+    foreach ($clientesLista as $c) {
+        if (strcasecmp(trim((string) ($c['nome_empresa'] ?? '')), $empresaFiltro) === 0) {
+            $idFiltro = (int) $c['id'];
+            break;
+        }
+    }
+}
+
+if ($idFiltro > 0) {
+    $equipamentos = array_values(array_filter($equipamentos, static function ($eq) use ($idFiltro) {
+        return (int) ($eq['id_cliente'] ?? 0) === $idFiltro;
+    }));
+}
 ?>
 
 <!DOCTYPE html>
@@ -10,7 +33,7 @@ $equipamentos =  readAll($pdo, 'equipamentos');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DevOn - Equipamentos</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/equipamento.css" rel="stylesheet">
 </head>
 <body class="pagina-equipamentos">
 <div class="container-principal">
@@ -18,7 +41,7 @@ $equipamentos =  readAll($pdo, 'equipamentos');
     <header class="topo-pagina">
         <h2 class="titulo-pagina">Gerenciamento de Equipamentos</h2>
         <div class="acoes-topo">
-            <a href="../index.php" class="btn-dashboard">Dashboard</a>
+            <a href="administrador.php<?= $idFiltro > 0 ? '?cliente=' . $idFiltro : ''; ?>" class="btn-dashboard">Dashboard</a>
             <a href="cadastro.php" class="btn-cadastrar">+ Cadastrar</a>
         </div>
     </header>
@@ -65,8 +88,8 @@ $equipamentos =  readAll($pdo, 'equipamentos');
                                 <span class="badge-<?= $cor; ?>"><?= $eq['status_funcionamento']; ?></span>
                             </td>
                             <td>
-                                <a href="../partials/edit.php?id=<?= $eq['id']; ?>" class="btn-editar">Editar</a>
-                                <a href="../partials/delete.php?id=<?= $eq['id']; ?>" class="btn-excluir" onclick="return confirm('Deseja realmente excluir este equipamento?');">Excluir</a>
+                                <a href="editar.php?id=<?= $eq['id']; ?>" class="btn-editar">Editar</a>
+                                <a href="../partials/equipamentos_delete.php?id=<?= $eq['id']; ?>" class="btn-excluir" onclick="return confirm('Deseja realmente excluir este equipamento?');">Excluir</a>
                             </td>
                         </tr>
                         <?php endforeach; ?>

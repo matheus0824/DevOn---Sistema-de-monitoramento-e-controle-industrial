@@ -1,0 +1,202 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+}
+
+body.pagina-equipamentos {
+    background-color: #e5e3dc; 
+    color: #444444;
+    padding-bottom: 4rem;
+}
+
+.container-principal {
+    max-width: 1200px;
+    margin: 2.5rem auto;
+    padding: 0 1.5rem;
+}
+
+.topo-pagina {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid rgba(59, 90, 69, 0.15); 
+    padding-bottom: 1.25rem;
+}
+
+.titulo-pagina {
+    color: #3b5a45;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.acoes-topo {
+    display: flex;
+    gap: 12px;
+}
+
+.btn-dashboard {
+    display: inline-flex;
+    align-items: center;
+    background-color: #ffffff;
+    color: #666666;
+    border: 1px solid #dcdcdc;
+    border-radius: 6px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.btn-dashboard:hover {
+    background-color: #f5f4f0;
+    color: #3b5a45;
+    border-color: #3b5a45;
+}
+
+.btn-cadastrar {
+    display: inline-flex;
+    align-items: center;
+    background-color: #3b5a45; 
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+.btn-cadastrar:hover {
+    background-color: #2f4837;
+}
+
+.caixa-tabela {
+    background-color: #ffffff; 
+    border-radius: 8px; 
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08); 
+    padding: 2rem;
+}
+
+.tabela-dados {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.tabela-dados th {
+    color: #3b5a45;
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 16px;
+    border-bottom: 2px solid #e5e3dc;
+}
+
+.tabela-dados td {
+    padding: 16px;
+    font-size: 15px;
+    color: #444444;
+    border-bottom: 1px solid #f0efe9;
+    vertical-align: middle; 
+}
+
+.tabela-dados tbody tr:hover td {
+    background-color: #fdfdfc;
+}
+
+.tabela-dados td strong {
+    color: #888888;
+    font-weight: 600;
+}
+
+.foto-equipamento {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 6px; 
+    border: 1px solid #dcdcdc;
+    display: block;
+}
+
+.texto-sem-foto {
+    font-size: 13px;
+    color: #a0a0a0;
+    font-style: italic;
+}
+
+.badge-variavel, 
+.badge-success, 
+.badge-warning, 
+.badge-danger {
+    display: inline-block;
+    padding: 6px 14px;
+    font-size: 13px;
+    font-weight: 600;
+    border-radius: 30px; 
+    text-align: center;
+}
+
+.badge-variavel {
+    background-color: #e8ece9;
+    color: #4a6b54;
+}
+
+.badge-success {
+    background-color: #e2ede4;
+    color: #2e5438;
+}
+
+.badge-warning {
+    background-color: #fbf3e3;
+    color: #7c5e10;
+}
+
+.badge-danger {
+    background-color: #fceeed;
+    color: #a33b3b;
+}
+
+.btn-editar, 
+.btn-excluir {
+    display: inline-block;
+    padding: 6px 14px;
+    font-size: 13px;
+    font-weight: 600;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.btn-editar {
+    color: #3b5a45;
+    background-color: #f0f5f1;
+    margin-right: 8px;
+}
+
+.btn-editar:hover {
+    color: #ffffff;
+    background-color: #3b5a45;
+}
+
+.btn-excluir {
+    color: #a33b3b;
+    background-color: #fceeed;
+}
+
+.btn-excluir:hover {
+    color: #ffffff;
+    background-color: #a33b3b;
+}
+
+.sem-dados {
+    text-align: center;
+    color: #a0a0a0;
+    padding: 50px ;
+    font-style: italic;
+}
