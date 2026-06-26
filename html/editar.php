@@ -1,14 +1,23 @@
+<?php
+require_once '../partials/equipamentos_update.php';
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <title>DevOn - Editar</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/editar.css" rel="stylesheet">
 </head>
-<body class="pagina-cadastro"> <div class="caixa-cadastro"> <h3 class="titulo-cadastro">Editar Equipamento #<?= $equipamento['id']; ?></h3>
+<body class="pagina-cadastro">
+<div class="caixa-cadastro">
+    <h3 class="titulo-cadastro">Editar Equipamento #<?= (int) $equipamento['id']; ?></h3>
+
+    <?php if (!empty($mensagem)): ?>
+        <div class="alerta-erro"><?= htmlspecialchars($mensagem); ?></div>
+    <?php endif; ?>
     
-    <form action="editar.php?id=<?= $equipamento['id']; ?>" method="POST" enctype="multipart/form-data">
+    <form action="editar.php?id=<?= (int) $equipamento['id']; ?>" method="POST" enctype="multipart/form-data">
         
         <div class="campo-grupo">
             <label class="campo-legenda">Nome</label>
@@ -48,7 +57,7 @@
         </div>
         
         <div class="acoes-formulario">
-            <a href="equipamentos.php" class="btn-voltar">Cancelar</a>
+            <a href="equipaments.php" class="btn-voltar">Cancelar</a>
             <button type="submit" class="btn-atualizar">Atualizar</button>
         </div>
         

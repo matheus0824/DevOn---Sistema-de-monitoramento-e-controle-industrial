@@ -1,24 +1,34 @@
 <?php
-session_start();
-if (!isset($_SESSION['usuario_id']) || $_SESSION['usuario_perfil'] !== 'admin') {
-    die("Acesso negado.");
+
+require_once __DIR__ . '/auth.php';
+require_once __DIR__ . '/crud.php';
+
+exigirAdmin();
+
+$entidade = $_GET['entidade'] ?? 'equipamento';
+$id = (int) ($_GET['id'] ?? 0);
+
+$mapa = [
+    'equipamento' => ['tabela' => 'equipamentos', 'redirect' => 'equipaments.php'],
+    'profissional' => ['tabela' => 'profissionais', 'redirect' => 'funcionarios.php'],
+];
+
+if ($id < 1 || !isset($mapa[$entidade])) {
+    redirecionarPara(urlHtml('administrador.php'));
 }
 
-require_once 'crud.php';
+$config = $mapa[$entidade];
+$registro = read($pdo, $config['tabela'], "id = $id");
 
-if (isset($_GET['id'])) {
-    $id_excluir = (int)$_GET['id'];
-    
-    $maquina = read($pdo, 'equipamentos', "id = $id_excluir");
-    if ($maquina && !empty($maquina['imagem'])) {
-        $caminho_foto = "uploads/" . $maquina['imagem'];
-        if (file_exists($caminho_foto)) {
-            unlink($caminho_foto);
+if ($registro) {
+    if ($entidade === 'equipamento') {
+        $uploadsDir = dirname(__DIR__) . '/uploads';
+        $fotoPorId = $uploadsDir . '/' . $id . '.jpg';
+        if (file_exists($fotoPorId)) {
+            unlink($fotoPorId);
         }
     }
-
-    delete($pdo, 'equipamentos', "id = $id_excluir");
+    deleteById($pdo, $config['tabela'], $id);
 }
 
-header("Location: equipamentos.php");
-exit;
+redirecionarPara(urlHtml($config['redirect']));

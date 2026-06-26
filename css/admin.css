@@ -1,0 +1,348 @@
+
+@import url('https://fonts.cdnfonts.com/css/gilroy-bold');
+
+* {
+    box-sizing: border-box;
+    /* border: 1px solid blue; */
+    padding: 0;
+    margin: 0;
+    font-family: 'Gilroy-Regular', sans-serif;
+}
+
+body {
+    background-color:   #dad7cd;
+}
+
+main {
+    margin-top: 15vh;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15vh;
+
+}
+
+.container-all {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+}
+
+.titulo {
+    padding-left: 5rem;
+    width: 100%;
+    text-align: left;
+}
+
+.titulo h1 {
+    font-size: 2rem;
+    font-family: 'Gilroy-Bold', sans-serif;
+}
+
+.empresa {
+    font-size: 1.5rem;
+    color: #7a7a7a;
+}
+
+.dashboard {
+    margin-top: 3vh;
+    width: 81%;
+    /* height: 500px; */
+    background-color: white;
+    border: 0;
+    border-radius: 5px;
+    padding: 2rem;
+    display: flex;
+    justify-self: center;
+    justify-content: center;
+    align-items: flex-start;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.dashboard table {
+    overflow: hidden;
+    background-color: white;
+    border-collapse: collapse;
+    width: 100%;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.dashboard tr {
+    border-bottom: 1px solid #aaa;
+    padding: 1rem;
+}
+
+.dashboard th {
+    padding: 1rem;
+    color: #3a5a40;
+    font-size: 1.2rem;
+    text-shadow: 0 0 10px rgba(58, 90, 64, 0.1)
+}
+
+.dashboard td {
+    font-weight: 600;
+    font-size: 1rem;
+    border-bottom: 1px solid #aaa;
+    padding: 1rem;
+    transition: ease 0.3s;
+}
+
+.dashboard tr:hover {
+    background-color: #f5f5f5;
+}
+
+.status-ativo {
+    color: green;
+}
+
+.status-inativo {
+    color: gray;
+}
+
+.status-falha {
+    color: red;
+}
+
+.status-atencao {
+    color: orange;
+}
+
+.container-cards {
+    gap: 1rem;
+    margin-top: 3vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+    width: 350px;
+    height: 200px;
+    border: 0;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.card-esq i {
+    font-size: 4rem;
+}
+
+.card-dir {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-dir h1 {
+    font-size: 2.7rem;
+}
+
+.card-dir h2 {
+    /* max-width: 150px; */
+    color: #aaa;
+    font-size: 1rem;
+}
+
+.atualizar {
+    padding: 0.6rem;
+    margin-top: 2vh;
+    font-size: 1.1rem;
+    /* width: 20%; */
+    align-self: center;
+    border: 0;
+    color: white;
+    font-weight: 600;
+    border-radius: 5px;
+    background-color: #3a5a40;
+    cursor: pointer;
+    transition: ease 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    gap: 1rem;
+    margin-top: 3vh;
+}
+
+.atualizar:hover {
+    background-color: rgba(58, 90, 64, 0.8);
+}
+
+.atualizar i {
+    font-size: 1.5rem;
+}
+
+
+.sideBar-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f3f3f3;
+    width: 110px;
+    height: 60px;
+    border-radius: 15%;
+    position: absolute;
+    gap: 1.2rem;
+    left: 3vw;
+    top: 15vh;
+}
+
+.sideBar-btn a{
+    color: black;
+    font-size: 2rem;
+}
+
+.sideBar-btn button {
+    font-size: 2.5rem;
+    text-decoration: none;
+    color: black;
+    background: none;
+    border: 0;
+    cursor: pointer;
+}
+
+.modal {
+    position: absolute;
+    display: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background-color: aquamarine; */
+}
+
+.sideBar {
+    height: 102.5%;
+    width: 25vw;
+    border: 0;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+}
+
+.fundo {
+    width: 100%;
+    height: 102.5vh;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.topo-sideBar {
+    margin-top: 2vh;
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.topo-sideBar h1 {
+    font-size: 1.5rem;
+    color: black;
+    font-weight: 700;
+}
+
+.topo-sideBar button {
+    margin-left: auto;
+    background: none;
+    border: 0;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: ease 0.3s;
+}
+
+.sub-titulo {
+    margin-top: 12vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.sub-titulo h1 {
+    color: #aaa;
+    font-size: 1rem;
+}
+
+.sub-titulo hr {
+    color: #aaa;
+    background-color: #aaa;
+    width: 55%;
+    height: 1px;
+    margin-left: auto;
+}
+
+.sideBar input {
+    background-color: #f5f5f5;
+    border: none;
+    outline: 1px solid #aaa;
+    padding: 0.5rem;
+    border-radius: 5px;
+    margin-top: 2vh;
+    transition: ease 0.3s;
+    font-weight: 600;
+}
+
+.sideBar input:focus {
+    border: none;
+    outline: 1px solid black;
+}
+
+.sideBar ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    margin-top: 2vh;
+    gap: 10px;
+    color: black;
+    font-weight: 600;
+}
+
+.sideBar li {
+    cursor: pointer;
+    transition: ease 0.3s;
+    padding: 0.5rem;
+    border-radius: 5px;
+}
+
+.sideBar li:hover{
+    background-color: #578159;
+    color: white;
+}
+
+.sideBar a {
+    text-decoration: none;
+    color: black;
+}
+
+.sideBar li:hover a{
+    color: white;
+}
+
+.log-out {
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    margin-top: auto;
+    align-items: center;
+}
+
+.log-out a {
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.5rem;
+    background-color: #3a5a40;
+    color: white;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    border-radius: 8px;
+}
+
+.log-out i {
+    font-size: 1.3rem;
+}
