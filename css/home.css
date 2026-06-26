@@ -1,0 +1,437 @@
+@import url('https://fonts.cdnfonts.com/css/gilroy-bold');
+
+* {
+    box-sizing: border-box;
+    /* border: 1px solid blue; */
+    padding: 0;
+    margin: 0;
+    font-family: 'Gilroy-Regular', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #dad7cd;
+    overflow-x: hidden;
+    font-family: gilroy-regular, sans-serif; 
+}
+
+.container-slogan {
+    min-height: 40vh;
+    align-items: center;
+    text-align: center;
+    color: #020202;
+    margin-left: 130px;
+}
+
+.slogan-content {
+    max-width: 700px;
+}
+
+.slogan-content h1 {
+    font-size: 45px; 
+    line-height: 1.2;
+    text-align: left;
+    margin-top: 80px;
+}
+
+.slogan-content p {
+    font-size: 30px; 
+    text-align: left;
+    color: #547a51;
+    padding-top: 20px;
+}
+
+.imagem-logo {
+    width: 800px;
+    height: auto;
+    position: absolute; 
+    top: 30px;
+    right: 50px;
+    margin-top: -250px;
+    z-index: 1;
+}
+
+.botoes-container {
+    margin-top: 150px;
+    width: 100%;
+    padding-left: 60px;
+    margin-bottom: 100px;
+    color: #547a51;
+}
+
+.botton-planos {
+    width: 150px;
+    margin-right: 100%;
+    padding: 10px;
+    border-radius: 20px;
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #547a51;
+    border: none;
+    cursor: pointer;
+}
+
+.secao-carrossel {
+    width: 100%;
+    padding: 40px 0;
+}
+
+.carrossel {
+    overflow: hidden;
+    display: flex;
+    width: 100%;
+}
+
+.group {
+    display: flex;
+    gap: 20px;
+    padding-right: 20px;
+    will-change: transform;
+    animation: scrolling 25s linear infinite; 
+}
+
+.carrossel-card {
+    flex-shrink: 0;
+    width: 200px; 
+    height: 150px;
+    color: transparent;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #547a51;
+    border-radius: 15px;
+}
+
+.carrossel-card:nth-child(1), .carrossel-card:nth-child(7) { background-image: url('../img/Braskem_logo_white.png'); }
+.carrossel-card:nth-child(2), .carrossel-card:nth-child(8) { background-image: url('../img/logos_senai_branco.png'); }
+.carrossel-card:nth-child(3), .carrossel-card:nth-child(9) { background-image: url('../img/ibm-logotipo.png'); }
+.carrossel-card:nth-child(4), .carrossel-card:nth-child(10) { background-image: url('../img/scania-marca-removebg-preview.png'); }
+.carrossel-card:nth-child(5), .carrossel-card:nth-child(11) { background-image: url('../img/Nvidia-White-Vertical-Logo.wine_.png'); }
+.carrossel-card:nth-child(6), .carrossel-card:nth-child(12) { background-image: url('../img/logo-govbr-dark.png'); }
+
+@keyframes scrolling {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
+.carrossel-fundo {
+    background-color: #547a51;
+    padding: 20px 0;
+    width: 100%;
+}
+
+.sobre-empresa {
+    padding: 50px;
+    background-color: #dad7cd;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.texto-sobre {
+    width: 100%;
+    max-width: 1200px;
+    font-size: 20px;
+    line-height: 1.4;
+    margin-bottom: 40px;
+}
+
+.imagem-sobre {
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    max-width: 1200px;
+    
+    
+}
+
+.imagem-logo-sobre {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+}
+
+.desenvolvedores {
+    padding: 50px;
+    background-color: #dad7cd;
+    width: 100%;
+    justify-content: center;
+}
+
+.secao-servicos {
+    width: 100%;
+    padding: 90px 130px;
+    background-color: #dad7cd;
+    display: flex;
+    justify-content: center;
+}
+
+.container-servicos {
+    background-color: #547a51;
+    width: 100%;
+    height: 900px;
+    border-radius: 4px;
+    padding: 10px;
+    padding-left: 50px;
+    gap: 10px;
+}
+
+.img-servicos-principal {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.servicos-lista {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 75px;
+    margin-left: 850px;
+    position: relative;
+    top: -900px;
+    background-color: #ffffff;
+    margin-right: 50px;
+    padding: 80px;
+    border-radius: 4px;
+}
+
+.servico-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.circulo-indicador {
+    width: 30px;
+    height: 30px;
+    background-color: #547a51;
+    border-radius: 100%;
+}
+
+.servico-item p {
+    color: #070707;
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+.botton-planos-servicos {
+    position: relative;
+    bottom: 250px;
+    left: 850px;
+    width: 100px;
+    padding: 6px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #547a51;
+    background-color: #ffffff;
+    border: none;
+    cursor: pointer;
+}
+
+.secao-empresa-slideshow {
+    width: 100%;
+    padding: 40px 130px;
+    background-color: #dad7cd;
+    display: flex;
+    justify-content: center;
+}
+
+.container-empresa-slides {
+    width: 100%;
+    max-width: 1400px;
+    display: flex;
+    gap: 50px;
+}
+
+.slides-fotos {
+    flex: 1;
+    height: 400px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+    background-color: #547a51;
+}
+
+.foto-slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    animation: alternarFotos 10s infinite ease-in-out;
+}
+
+.foto1 {
+    background-image: url('../img/tabela.png');
+    box-shadow: 0 10px 25px rgba(161, 51, 51, 0.1);
+}
+
+.foto2 {
+    background-image: url('../img/img.png');
+    animation-delay: 5s;
+}
+
+@keyframes alternarFotos {
+    0% { opacity: 0; }
+    5% { opacity: 1; }
+    45% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+.texto-empresa-box {
+    flex: 1;
+    background-color: #ffffff;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 4px;
+}
+
+.texto-empresa-box h2 {
+    color: #547a51;
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+.texto-empresa-box p {
+    color: #333333;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.secao-bloco-verde {
+    width: 100%;
+    padding: 40px 130px;
+    background-color: #dad7cd;
+    display: flex;
+    justify-content: center;
+}
+
+.container-bloco-verde {
+    background-color: #547a51;
+    width: 100%;
+    max-width: 1400px;
+    height: 450px;
+    border-radius: 4px;
+}
+
+.secao-planos {
+    background-color: #547a51;
+    padding: 80px 20px;
+    width: 100%;
+    text-align: center;
+}
+
+.titulo-planos {
+    color: #ffffff;
+    font-size: 32px;
+    font-family: 'Gilroy-Bold', sans-serif;
+    margin-bottom: 50px;
+}
+
+.container-planos {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.card-plano {
+    background-color: #ffffff;
+    border-radius: 30px;
+    padding: 40px 30px;
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.nome-plano {
+    font-size: 24px;
+    color: #547a51;
+    margin-bottom: 15px;
+    font-family: 'Gilroy-Bold', sans-serif;
+}
+
+.preco-plano {
+    font-size: 36px;
+    font-weight: bold;
+    color: #333333;
+    margin-bottom: 30px;
+}
+
+.preco-plano span {
+    font-size: 16px;
+    color: #777777;
+    font-weight: normal;
+}
+
+.recursos-plano {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 40px;
+    width: 100%;
+    flex-grow: 1;
+}
+
+.recursos-plano li {
+    color: #555555;
+    font-size: 15px;
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.recursos-plano li:last-child {
+    border-bottom: none;
+}
+
+.botao-plano {
+    background-color: #ffffff;
+    color: #547a51;
+    border: none;
+    padding: 12px 35px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 25px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.painel-controle{
+    width: 500px;
+    height: 500px;
+    position: relative;
+    top: -150px; 
+    right: 150px;
+}
+.medidor-vibracao{
+    width: 500px;
+    height: 500px;
+    position: relative;
+    right: 250px;
+    bottom: -150px;
+    rotate: -27deg;
+}
+.medidor-pressao{
+    width: 600px;
+    height: 600px;
+    position: relative;
+    top: -50px;
+    right: 150px;
+}
