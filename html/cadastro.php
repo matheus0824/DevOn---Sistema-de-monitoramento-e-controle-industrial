@@ -1,35 +1,26 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro</title>
-    <link rel="stylesheet" href="../css/css.css">
-</head>
-<body>
-
-    <div class="container-form">
+<div class="container-form">
         
-        <form class="boxCadastro">
-        
-        
-            <img src="Imagens/logocadastro.png" alt="">
-            <h1>Cadastre-se já!</h1>
-            <div class="inputInfo">
-                <input type="text" name="nomeCadastro"  placeholder="Nome completo">
-            </div>
-            <div class="inputInfo">
-                <input type="email" name="emailCadastro"  placeholder="E-mail">
-            </div>
-            <div class="inputInfo">
-                <input type="password" name="senhaCadastro"  placeholder="Senha">
-            </div>
-            <div class="inputInfo">
-                <input type="text" name="senhaCadastro"  placeholder="Confirmar Senha">
-            </div>
-            <button class="cadastroButton">Cadastre-se</button>
-        </form >
+        <form class="boxCadastro" method="POST" action="../partials/insert.php">
+    
+    <img src="Imagens/logocadastro.png" alt="">
+    <h1>Cadastre-se já!</h1>
+    
+    <div class="inputInfo">
+        <input type="text" name="nome" placeholder="Nome completo" required>
     </div>
-  
-</body>
-</html>
+    
+    <div class="inputInfo">
+        <input type="email" name="email" placeholder="E-mail" required>
+    </div>
+    
+    <div class="inputInfo">
+        <input type="password" name="senha" placeholder="Senha" required>
+    </div>
+    
+    <div class="inputInfo">
+        <input type="password" name="confirmar_senha" placeholder="Confirmar Senha" required>
+    </div>
+    
+    <button type="submit" name="cadastro" class="cadastroButton">Cadastre-se</button>
+</form>
+    </div>

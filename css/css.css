@@ -1,37 +1,17 @@
-@charset "UTF-8";
-* {
-    font-family: 'Gilroy-Bold', sans-serif;
-    text-decoration: none;
-    /* border: 1px solid red; */
-}
+/* cadastro*/
 @import url('https://fonts.cdnfonts.com/css/gilroy-bold');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gilroy-Regular', sans-serif;
+}
 
 body {
     background-color: #dad7cd;
 }
 
-.boxCadastro h1 {
-    font-size: 24px;
-    font-family: 'Gilroy-Regular', sans-serif;
-}
-
-.boxCadastro img {
-    position: relative;
-    
-}
-
-.boxCadastro {
-    background-color:  white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 420px;
-    height: 480px;
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.226);
-}
 .container-form {
     display: flex;
     justify-content: center;
@@ -40,43 +20,70 @@ body {
     height: 100vh;
 }
 
-.container-form > img {
-    width: 100px;
-    position: relative;
-    bottom: 30px;
+.boxCadastro {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 420px;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+    gap: 15px;
 }
-.boxCadastro img{
-    width: 280px;    
-}
-.inputInfo {
-   padding-bottom: 16px;
 
+.boxCadastro img {
+    width: 70px;
+    height: auto;
+    margin-bottom: 5px;
+}
+
+.boxCadastro h1 {
+    font-size: 24px;
+    font-family: 'Gilroy-Bold', sans-serif;
+    color: #3a5a40;
+    margin-bottom: 10px;
+}
+
+.inputInfo {
+    width: 100%;
 }
 
 .inputInfo input {
-    background-color: #FAFAFA;
-    font-size: 16px;
-    display: flex;
-    justify-content: center;
-    border: 1px solid rgb(207, 207, 207) ;
-    width: 400px;
-    height: 40px;
-    border-radius: 14px;
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 15px;
     outline: none;
-    
+}
+
+.boxCadastro a {
+    font-size: 14px;
+    color: #3a5a40;
+    text-decoration: none;
+    margin-top: 5px;
+}
+
+.boxCadastro a:hover {
+    text-decoration: underline;
 }
 
 .cadastroButton {
-    color: rgba(255, 255, 255, 0.89);
-    font-weight: bold;
-    font-size: 18px;
-    background: none;
-    background-color: #3f6b43;
-   width: 150px;
-   height: 45px;
-   border-radius: 16px;
-   border: 1px solid green;
+    width: 100%;
+    padding: 12px;
+    background-color: #3a5a40;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: 'Gilroy-Bold', sans-serif;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
 }
-button {
-    padding: 15px;
+
+.cadastroButton:hover {
+    background-color: #2f4934;
 }
