@@ -1,8 +1,8 @@
 <div>
     <form action="../partials/insert.php" method="POST">
-        <input type="email" id="username" name="username" required><br><br>
+        <input type="email" id="nome" name="nome" required><br><br>
         
-        <input type="password" id="password" name="password" required><br><br>
+        <input type="password" id="senha" name="senha" required><br><br>
         
         <input type="submit" value="Login" name="login">
 

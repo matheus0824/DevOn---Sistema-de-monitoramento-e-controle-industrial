@@ -3,7 +3,7 @@ $host = "localhost";
 $port = 3306;
 $dbname = "db_devon";
 $username = "root";
-$password = "aluno";
+$password = "";
 
 try {
     $pdo = new PDO("mysql:host=$host;port=$port;dbname=$dbname", $username, $password);

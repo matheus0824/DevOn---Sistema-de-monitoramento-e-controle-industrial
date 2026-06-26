@@ -1,10 +1,10 @@
 <div>
-    <form method="post" action="">
-            <input type="text"  id="username" name="username" required>
+    <form method="post" action="../partials/insert.php">
+            <input type="text"  id="username" name="nome" required>
 
-            <input type="password"  id="password" name="password" required>
+            <input type="password"  id="senha" name="senha" required>
 
-            <input type="email"  id="email" name="e-mail" required>
+            <input type="email"  id="email" name="email" required>
 
             <input type="submit" value="login" name="cadastro">
             

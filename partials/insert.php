@@ -1,26 +1,26 @@
 <?php
 
-require_once '/crud.php';
+require_once 'crud.php';
 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if (isset($_POST['cadastro'])) {
-            $username = trim($_POST['username'] ?? '');
-            $email = trim($_POST['email'] ?? '');
-            $password = $_POST['password'] ?? '';
+            $nome = trim($_POST['nome'] ?? 'nome');
+            $email = trim($_POST['email'] ?? 'email');
+            $senha = $_POST['senha'] ?? 'senha';
     
             try {
-                if ($username === '' || $email === '' || $password === '') {
+                if ($nome === 'nome' || $email === 'email' || $senha === 'senha') {
                     $msg = 'Preencha todos os campos.';
                 } else {
                     $dados = [
-                        'username' => $username,
+                        'nome' => $nome,
                         'email' => $email,
-                        'password' => password_hash($password, PASSWORD_DEFAULT)
+                        'senha' =>  $senha
                     ];
     
-                    create($pdo, 'devon', $dados);
+                    create($pdo, 'usuarios', $dados);
                     $msg = 'Usuário cadastrado com sucesso.';
                 }
             } catch (Throwable $e) {
@@ -29,16 +29,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     if (isset($_POST['login'])) {
-        $username = trim($_POST['username'] ?? '');
-        $password = $_POST['password'] ?? '';
+        $nome = trim($_POST['nome'] ?? 'nome');
+        $senha = $_POST['senha'] ?? 'senha';
 
         try {
-            if ($username === '' || $password === '') {
+            if ($nome === 'nome' || $senha === 'senha') {
                 $msg = 'Preencha todos os campos.';
             } else {
-                $user = read($pdo, 'devon', 'username = "' . $username . '"');
-                if ($user && password_verify($password, $user['password'])) {
-                    $msg = 'Login bem-sucedido. Bem-vindo, ' . htmlspecialchars($user['username']) . '!';
+                $user = read($pdo, 'usuarios', 'nome = "' . $nome . '"');
+                if ($user && password_verify($senha, $user['senha'])) {
+                    $msg = 'Login bem-sucedido. Bem-vindo, ';
                 } else {
                     $msg = 'Usuário ou senha incorretos.';
                 }
@@ -49,4 +49,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
+location: ../html/formCadstro.php
 ?>
