@@ -81,3 +81,61 @@ function hs($v) {
 </main>
 </body>
 </html>
+
+
+
+cards dos planos mensais
+
+<?php
+require_once 'crud.php';
+
+$id = $_POST['id'];
+
+$figurinhaAtual = read($pdo, 'figurinhas', "id = $id");
+
+$dadosAtualizados = [
+    'nome' => $_POST['nome'],
+    'selecao' => $_POST['selecao'],
+    'time' => $_POST['time'],
+    'idade' => $_POST['idade'],
+    'posicao' => $_POST['posicao']
+];
+
+if (isset($_FILES['arquivo']) && $_FILES['arquivo']['error'] === UPLOAD_ERR_OK) {
+
+    $tipos_permitidos = ['image/jpeg', 'image/png', 'image/gif', 'image/jpg'];
+
+    if (!in_array($_FILES['arquivo']['type'], $tipos_permitidos)) {
+        die("Tipo de arquivo não permitido.");
+    }
+
+    $tamanho_maximo = 1 * 1024 * 1024;
+
+    if ($_FILES['arquivo']['size'] > $tamanho_maximo) {
+        die("O arquivo é muito grande. Máximo permitido: 1MB.");
+    }
+
+    if ($figurinhaAtual && !empty($figurinhaAtual['foto']) && file_exists($figurinhaAtual['foto'])) {
+        unlink($figurinhaAtual['foto']);
+    }
+
+    $extensao = pathinfo($_FILES['arquivo']['name'], PATHINFO_EXTENSION);
+    $novo_nome = 'foto_' . uniqid() . '.' . $extensao;
+    $caminho_base = 'uploads/' . $id . '/';
+
+    if (!is_dir($caminho_base)) {
+        mkdir($caminho_base, 0755, true);
+    }
+
+    $file_dest = $caminho_base . $novo_nome;
+
+    if (move_uploaded_file($_FILES['arquivo']['tmp_name'], $file_dest)) {
+        $dadosAtualizados['foto'] = $file_dest;
+    }
+}
+
+update($pdo, 'figurinhas', $dadosAtualizados, "id = $id");
+
+header('Location: select.php');
+exit;
+?>

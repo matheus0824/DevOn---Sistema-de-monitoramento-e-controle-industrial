@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             }
         } catch (Throwable $e) {
             $msg = "Erro: " . $e->getMessage();
-            header("Location: ../html/cadastro.php?error=" . urlencode($msg));
+            header("Location: ../html/formLogin.php?error=" . urlencode($msg));
             exit;
         }
     }
@@ -47,7 +47,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                 if ($user && password_verify($senha, $user['senha'])) {
                     
-                    // Guarda os dados na sessão do navegador
                     $_SESSION['usuario_id']   = $user['idUsuarios'];
                     $_SESSION['usuario_nome'] = $user['nome'];
                     $_SESSION['usuario_tipo'] = $user['tipo']; 
@@ -66,7 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $msg = "Erro: " . $e->getMessage();
         }
         
-        header("Location: ../index.php?error=" . urlencode($msg));
+        header("Location: ../home.php?error=" . urlencode($msg));
         exit;
     }
 }

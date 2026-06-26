@@ -49,3 +49,96 @@ function hs($v)
     </section>
     <p class="muted"><a href="index.php">Painel principal</a></p>
 </main>
+
+
+
+cards dos planos mensais
+<?php
+require_once 'crud.php';
+
+$figurinhas = readAll($pdo, 'figurinhas');
+$totalFigurinhas = count($figurinhas);
+?>
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Meu Álbum</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+    <header>
+        <a href="index.php"><img src="./imagens/fifa 2026.png" alt="Gerenciamento de figurinhas"
+                style="width: 250px; height: 120px;"></a>
+
+        <div class="menu-direita">
+            <nav>
+                <ul class="menu-principal">
+                    <li>
+                        <a href="index.php">Cadastrar Figurinha</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <h1 class="titulo-album">Meu Álbum de Figurinhas</h1>
+    <h2 class="contador-album">Total de figurinhas: <?= $totalFigurinhas ?></h2>
+
+
+    <div class="album-container">
+
+        <?php foreach ($figurinhas as $figurinha): ?>
+
+            <div class="card-figurinha">
+
+                <?php if (!empty($figurinha['foto'])): ?>
+                    <img src="<?= $figurinha['foto'] ?>" alt="Foto do jogador" class="foto-jogador">
+                <?php else: ?>
+                    <img src="./imagens/semfoto.png" alt="Sem foto" class="foto-jogador">
+                <?php endif; ?>
+
+                <h3 class="nome-jogador"><?= $figurinha['nome'] ?></h3><br>
+
+                <div class="info-grid">
+                    <div class="info-item">
+                        <span>Seleção</span>
+                        <strong><?= $figurinha['selecao'] ?></strong>
+                    </div>
+
+                    <div class="info-item">
+                        <span>Time</span>
+                        <strong><?= $figurinha['time'] ?></strong>
+                    </div>
+
+                    <div class="info-item">
+                        <span>Idade</span>
+                        <strong><?= $figurinha['idade'] ?></strong>
+                    </div>
+
+                    <div class="info-item">
+                        <span>Posição</span>
+                        <strong><?= $figurinha['posicao'] ?></strong>
+                    </div>
+                </div>
+
+                <a href="edit.php?id=<?= $figurinha['id'] ?>" class="btn-editar">
+                    Editar Figurinha
+                </a>
+                <a href="delete.php?id=<?= $figurinha['id'] ?>" class="btn-excluir"
+                    onclick="return confirm('Tem certeza que deseja excluir esta figurinha?')">
+                    Excluir Figurinha
+                </a>
+            </div>
+
+        <?php endforeach; ?>
+
+    </div>
+
+</body>
+
+</html>

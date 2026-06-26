@@ -10,7 +10,7 @@ footer {
     justify-content: space-between;
     align-items: center;
     padding: 40px 10%;
-    margin-top: auto; /* Joga o footer para o fim da página */
+    margin-top: auto; 
     border-top: 1px solid #e0e0e0;
 }
 

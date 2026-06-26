@@ -1,4 +1,5 @@
 <div class="container-form">
+    <link rel="stylesheet" href="../css/css.css">
         
         <form class="boxCadastro" method="POST" action="../partials/insert.php">
     

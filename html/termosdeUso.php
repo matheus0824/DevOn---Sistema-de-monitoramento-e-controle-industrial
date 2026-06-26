@@ -1,4 +1,5 @@
 <section>
+    <link rel="stylesheet" href="../css/termosdeUso.css">
 
     <h1>Termos e Condições de Uso – DevOn</h1>
 
@@ -44,21 +45,43 @@ licenciadores, protegidos pelas leis de direitos autorais e propriedade industri
 Dados de Sensores: A precisão do monitoramento de temperatura e pressão depende da calibração adequada dos hardwares utilizados e da infraestrutura de rede do cliente.
 Danos Indiretos: A DevOn não se responsabiliza por lucros cessantes, interrupções de produção ou danos ambientais resultantes de falhas na interpretação dos dados pelo usuário ou mau uso dos alarmes.</p>
 
-6. Proteção de Dados e Privacidade
-A coleta e o tratamento de dados (como logs de temperatura e pressão) seguem rigorosamente a Lei Geral de Proteção de Dados (LGPD). Para mais detalhes, consulte nossa [Política de Privacidade].
-7. Responsabilidades do Cliente
-É responsabilidade do cliente:
+<h3>6. Proteção de Dados e Privacidade
+</h3>
+
+<p>A coleta e o tratamento de dados (como logs de temperatura e pressão) seguem rigorosamente a Lei Geral de Proteção de Dados (LGPD).
+Para mais detalhes, consulte nossa [Política de Privacidade].
+</p>
+
+<h3>7. Responsabilidades do Cliente
+</h3>
+
+<p>É responsabilidade do cliente:
 Garantir a infraestrutura de internet necessária para o envio dos dados de monitoramento.
 Configurar corretamente os limites críticos para o disparo de Alarmes Industriais.
-Treinar a equipe operadora para responder aos alertas emitidos pelo sistema DevOn.
-8. Rescisão e Suspensão
-A DevOn poderá suspender o acesso aos serviços em caso de:
+Treinar a equipe operadora para responder aos alertas emitidos pelo sistema DevOn.</p>
+
+<h3>8. Rescisão e Suspensão</h3>
+
+<p>A DevOn poderá suspender o acesso aos serviços em caso de:
 Violação de qualquer cláusula deste termo.
 Inadimplência de planos de assinatura ou manutenção.
-Uso que coloque em risco a integridade dos servidores da plataforma.
-9. Alterações nos Termos
-Reservamo-nos o direito de modificar estes termos a qualquer momento. Alterações significativas serão notificadas via e-mail ou aviso em destaque no site. O uso contínuo após a alteração implica aceitação dos novos termos.
-10. Foro e Legislação Aplicável
-Estes termos são regidos pelas leis da República Federativa do Brasil. Fica eleito o foro da comarca de  São Caetano do Sul/ São Paulo para dirimir quaisquer controvérsias oriundas deste documento.
+Uso que coloque em risco a integridade dos servidores da plataforma.</p>
+
+
+<h3>9. Alterações nos Termos</h3>
+
+<p>Reservamo-nos o direito de modificar estes termos a qualquer momento. Alterações significativas serão notificadas via e-mail ou aviso em destaque no site.
+O uso contínuo após a alteração implica aceitação dos novos termos.
+
+<h3>10. Foro e Legislação Aplicável
+</h3>
+
+<p>Estes termos são regidos pelas leis da República Federativa do Brasil. Fica eleito o foro da comarca de  São Caetano do Sul/ São Paulo para dirimir quaisquer controvérsias oriundas deste documento.</p>
+</p>
+
 
 </section>
+
+<?php
+include 'footer.php';
+?>

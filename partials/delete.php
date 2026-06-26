@@ -49,3 +49,45 @@ function hs($v)
 </main>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+cards do planos mensais
+
+<?php
+require_once 'crud.php';
+
+if (isset($_GET['id'])) {
+
+    $id = $_GET['id'];
+
+    $figurinha = read($pdo, 'figurinhas', "id = $id");
+
+    if ($figurinha && !empty($figurinha['foto'])) {
+
+        if (file_exists($figurinha['foto'])) {
+            unlink($figurinha['foto']);
+        }
+
+        $pasta = dirname($figurinha['foto']);
+
+        if (is_dir($pasta)) {
+            rmdir($pasta);
+        }
+    }
+
+    delete($pdo, 'figurinhas', "id = $id");
+
+    header('Location: select.php');
+    exit;
+}
+
+echo "Figurinha não encontrada.";
+?>
