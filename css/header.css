@@ -1,0 +1,93 @@
+@import url('https://fonts.cdnfonts.com/css/gilroy-bold');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gilroy-Regular', sans-serif;
+    scrollbar-width: none;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 10vh;
+    padding: 0 5%;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.nome-empresa {
+    max-width: 100px;
+}
+
+.nome-empresa h1{
+    /* margin-left: 5vw; */
+    font-size: 2rem;
+    color: #3a5a40;
+    font-family: 'Gilroy-Bold', sans-serif;
+}
+
+header ul{
+    display: flex;
+    list-style: none;
+    justify-self: center;
+    gap: 5rem;
+}
+
+header a{
+    color: black;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+header li:hover{
+    transition: ease 0.3s;
+}
+
+header li:hover{
+    color: #3a5a40;
+    text-shadow: 0 0 5px rgba(58, 90, 64, 0.1);
+}
+
+.botao-login{
+    gap: 0.7rem;
+    display: flex;
+}
+
+.entre{
+    padding: 0.7rem;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    background-color: #3a5a40;
+    /* border: 2px solid #3a5a40; */
+    color: white;
+    transition: ease 0.3s;
+    display: flex;
+    align-items: center;
+}
+
+.entre:hover{
+    background-color: rgba(58, 90, 64, 0.7);
+    /* border: 2px solid rgba(58, 90, 64, 0.7); */
+}
+
+.cadastro {
+    padding: 0.7rem;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    background-color: white;
+    color: #3a5a40;
+    border: 2px solid #3a5a40;
+    transition: ease 0.3s;
+    display: flex;
+    align-items: center;
+}
+
+.cadastro:hover {
+    background-color: #3a5a40;
+    color: white;
+}
